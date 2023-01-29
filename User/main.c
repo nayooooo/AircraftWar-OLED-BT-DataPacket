@@ -19,7 +19,7 @@ int main()
 	
 	LED_Init();
 	BT_Init();
-	OLED_Init();
+	AW_Game_Init(); AW_Screen_Refresh();
 	
 	while(1)
 	{

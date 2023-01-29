@@ -432,8 +432,9 @@ void OLED_ShowBMP(u8 x,u8 y,const u8 *p,u8 width,u8 height,u8 mode)
 {
 	u8 u_x, u_y;
 	u8 temp;
-	u8 csize;
-	u8 i, j;
+	u16 csize;
+	u16 i;
+	u8 j;
 	
 	if(x>OLED_COL_MAX-1 || y>OLED_ROW_MAX-1) return;
 	u_x = x; u_y = y;

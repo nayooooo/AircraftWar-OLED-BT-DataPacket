@@ -39,6 +39,8 @@ extern AW_Screen_Size AW_SS;
 	声明显示载体相关函数
 ================================================================*/
 
+void AW_Game_Init(void);
+
 void AW_Screen_Refresh(void);
 
 #endif /* __AIRCRAFTWAR_H */

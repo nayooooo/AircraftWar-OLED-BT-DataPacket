@@ -42,7 +42,7 @@
 __asm (".global __use_no_semihosting\n\t");		/* 声明不使用半主机模式 */
 __asm (".global __ARM_use_no_argv \n\t");		/* AC6不需要声明main函数为无参数格式，否则部分例程可能出现半主机模式 */
 #else											/* 使用AC5编译器 */
-//#pragma import(__use_no_semihosting)
+#pragma import(__use_no_semihosting)
 
 struct __FILE
 {

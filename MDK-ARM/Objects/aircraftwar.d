@@ -64,4 +64,5 @@
   ..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_usart.h \
   ..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_usart_ex.h \
   ..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_wwdg.h \
-  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdlib.h
+  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdlib.h \
+  ..\Middlewares\Game\AW_Bmp.h
