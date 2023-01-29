@@ -544,6 +544,11 @@
               <FileType>1</FileType>
               <FilePath>..\Middlewares\Game\AircraftWar.c</FilePath>
             </File>
+            <File>
+              <FileName>AW_Background.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Middlewares\Game\AW_Background.c</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>
