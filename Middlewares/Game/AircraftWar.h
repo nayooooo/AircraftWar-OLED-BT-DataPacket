@@ -24,16 +24,17 @@
 
 // 屏幕参数
 typedef struct{
-	uint16_t width;
-	uint16_t height;
-	uint8_t pixelSize;
-}AW_Screen_Size;
+	uint16_t width;						// 显示载体宽度
+	uint16_t height;					// 显示载体高度
+	uint8_t pixelSize;					// 显示载体像素大小，可自行设定
+	const uint8_t *bg;					// 背景
+}AW_Screen_t;
 
 /*================================================================
 	声明显示载体相关变量信息
 ================================================================*/
 
-extern AW_Screen_Size AW_SS;
+extern AW_Screen_t AW_SS;
 
 /*================================================================
 	声明显示载体相关函数
