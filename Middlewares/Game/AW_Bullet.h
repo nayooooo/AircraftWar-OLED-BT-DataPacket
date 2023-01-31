@@ -1,13 +1,14 @@
-#ifndef __AW_PLAYER_H
-#define __AW_PLAYER_H
+#ifndef __AW_BULLET_H
+#define __AW_BULLET_H
 
 #include "AircraftWar.h"
-#include "AW_Bullet.h"
 
 /*================================================================
-	游戏成员参数宏
+	子弹结构体
 ================================================================*/
 
-#define AW_PLAYER_BULLETS_NUM_MAX				(5)
+typedef struct{
+	Point p;					// 位置坐标
+} AW_Bullet_t;
 
-#endif /* __AW_PLAYER_H */
+#endif /* __AW_BULLET_H */

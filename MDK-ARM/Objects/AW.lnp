@@ -25,6 +25,7 @@
 ".\objects\iic.o"
 ".\objects\oled.o"
 ".\objects\aircraftwar.o"
+".\objects\aw_bullet.o"
 ".\objects\aw_player.o"
 --strict --scatter ".\Objects\AW.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols

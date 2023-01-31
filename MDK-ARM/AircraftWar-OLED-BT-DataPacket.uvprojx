@@ -545,6 +545,11 @@
               <FilePath>..\Middlewares\Game\AircraftWar.c</FilePath>
             </File>
             <File>
+              <FileName>AW_Bullet.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Middlewares\Game\AW_Bullet.c</FilePath>
+            </File>
+            <File>
               <FileName>AW_Player.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Middlewares\Game\AW_Player.c</FilePath>
