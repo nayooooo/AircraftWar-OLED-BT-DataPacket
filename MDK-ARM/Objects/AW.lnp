@@ -26,7 +26,7 @@
 ".\objects\oled.o"
 ".\objects\aircraftwar.o"
 ".\objects\aw_background.o"
---strict --scatter ".\Objects\Template.sct"
+--strict --scatter ".\Objects\AW.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
---list ".\Listings\Template.map" -o .\Objects\Template.axf
+--list ".\Listings\AW.map" -o .\Objects\AW.axf
