@@ -1,7 +1,7 @@
 #ifndef __AW_BULLET_H
 #define __AW_BULLET_H
 
-#include "AircraftWar.h"
+#include "AW_def.h"
 
 /*================================================================
 	子弹结构体

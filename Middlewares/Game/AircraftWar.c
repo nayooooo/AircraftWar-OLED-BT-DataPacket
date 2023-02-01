@@ -1,3 +1,4 @@
+#define AW_ALL_ENABLE
 #include "AircraftWar.h"
 
 #include "AW_Bg.h"

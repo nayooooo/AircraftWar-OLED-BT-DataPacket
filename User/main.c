@@ -9,8 +9,6 @@
 
 #include "main.h"
 
-#include "AW_Player.h"
-
 int main()
 {
 	Point p = { 0, 20 };

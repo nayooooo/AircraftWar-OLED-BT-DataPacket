@@ -5,35 +5,19 @@
 	includes
 ================================================================*/
 
-#include "stdio.h"		// 调试输出
-#include "stdint.h"
-#include "oled.h"		// 显示载体
-typedef Point AW_Point;
+#include "AW_def.h"
 
-#ifndef __AW_BULLET_H  // 展开过AW_Bullet.h的文件不应包含以下内容
-#include "AW_Player.h"
-#endif /* __AW_BULLET_H */
-
-/*================================================================
-	显示载体相关宏
-================================================================*/
-
-#define AW_SCREEN_WIDTH						(OLED_COL_MAX)		/* 屏幕宽 */
-#define AW_SCREEN_HEIGH						(OLED_ROW_MAX)		/* 屏幕高 */
-
-#define AW_SCREEN_PIXEL_SIZE_DEFAULT		(1)					/* 默认像素大小 */
-
-/*================================================================
-	显示载体相关结构体
-================================================================*/
-
-// 屏幕参数
-typedef struct{
-	uint16_t width;						// 显示载体宽度
-	uint16_t height;					// 显示载体高度
-	uint8_t pixelSize;					// 显示载体像素大小，可自行设定
-	const uint8_t *bg;					// 背景
-}AW_Screen_t;
+#ifdef AW_BULLET_ENABLE
+	#include "AW_Bullet.h"
+#endif /* AW_BULLET_ENABLE */
+#ifdef AW_PLAYER_ENABLE
+	#include "AW_Bullet.h"
+	#include "AW_Player.h"
+#endif /* AW_PLAYER_ENABLE */
+#ifdef AW_ALL_ENABLE
+	#include "AW_Bullet.h"
+	#include "AW_Player.h"
+#endif /* AW_ALL_ENABLE */
 
 /*================================================================
 	声明显示载体相关变量信息

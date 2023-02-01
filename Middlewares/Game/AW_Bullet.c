@@ -1,1 +1,2 @@
-#include "AW_Bullet.h"
+#define AW_BULLET_ENABLE
+#include "AircraftWar.h"

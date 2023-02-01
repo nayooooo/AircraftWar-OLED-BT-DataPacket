@@ -1,4 +1,5 @@
-#include "AW_Player.h"
+#define AW_PLAYER_ENABLE
+#include "AircraftWar.h"
 
 static AW_Player_t player;
 

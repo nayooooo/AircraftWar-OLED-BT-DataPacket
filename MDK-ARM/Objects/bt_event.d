@@ -66,6 +66,7 @@
   ..\Drivers\BSP\BT\bt_dp.h \
   D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h \
   D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h \
-  ..\Middlewares\Game\AircraftWar.h ..\Drivers\BSP\OLED\oled.h \
+  ..\Middlewares\Game\AircraftWar.h ..\Middlewares\Game\AW_def.h \
+  ..\Drivers\BSP\OLED\oled.h \
   D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdlib.h \
   ..\Middlewares\Game\AW_Player.h ..\Middlewares\Game\AW_Bullet.h
