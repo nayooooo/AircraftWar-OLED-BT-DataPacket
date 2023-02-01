@@ -10,7 +10,7 @@
 #include "oled.h"		// 显示载体
 typedef Point AW_Point;
 
-#ifndef __AW_BULLET_H  // 从AW_Bullet.c展开，不应包含更高级的子模块
+#ifndef __AW_BULLET_H  // 展开过AW_Bullet.h的文件不应包含以下内容
 #include "AW_Player.h"
 #endif /* __AW_BULLET_H */
 

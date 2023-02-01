@@ -78,7 +78,7 @@ I (..\Drivers\BSP\BT\bt.h)(0x63DA6C86)
 I (..\Drivers\BSP\BT\bt_dp.h)(0x63DA6C2C)
 I (..\Drivers\BSP\OLED\oled.h)(0x63D6ADF9)
 I (D:\Keil_v5\ARM\ARMCLANG\include\stdlib.h)(0x637AECBC)
-I (..\Middlewares\Game\AircraftWar.h)(0x63DAB626)
+I (..\Middlewares\Game\AircraftWar.h)(0x63DAB6C2)
 I (..\Middlewares\Game\AW_Player.h)(0x63DAB503)
 I (..\Middlewares\Game\AW_Bullet.h)(0x63DAB503)
 F (..\User\stm32g0xx_it.c)(0x63D040A1)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Drivers/CMSIS -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/System/sys -I ../Drivers/System/delay -I ../Drivers/System/usart -I ../User -I ../Drivers/BSP/LED -I ../Drivers/BSP/BT -I ../Drivers/BSP/OLED -I ../Middlewares/Game-ID:/Users/YEWAN/AppData/Local/Arm/Packs/Keil/STM32G0xx_DFP/1.4.0/Drivers/CMSIS/Device/ST/STM32G0xx/Include-D__UVISION_VERSION="538" -DSTM32G030xx -DUSE_HAL_DRIVER-o ./objects/stm32g0xx_it.o -MD)
@@ -1586,7 +1586,7 @@ I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_wwdg.h)(0x60D16A7A)
 I (..\Drivers\BSP\BT\bt_dp.h)(0x63DA6C2C)
 I (D:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x637AECBC)
 I (D:\Keil_v5\ARM\ARMCLANG\include\string.h)(0x637AECBC)
-I (..\Middlewares\Game\AircraftWar.h)(0x63DAB626)
+I (..\Middlewares\Game\AircraftWar.h)(0x63DAB6C2)
 I (..\Drivers\BSP\OLED\oled.h)(0x63D6ADF9)
 I (D:\Keil_v5\ARM\ARMCLANG\include\stdlib.h)(0x637AECBC)
 I (..\Middlewares\Game\AW_Player.h)(0x63DAB503)
@@ -1737,7 +1737,7 @@ I (..\Drivers\BSP\OLED\oled.h)(0x63D6ADF9)
 I (D:\Keil_v5\ARM\ARMCLANG\include\stdlib.h)(0x637AECBC)
 I (..\Drivers\BSP\OLED\oledfont.h)(0x63D63889)
 F (..\Middlewares\Game\AircraftWar.c)(0x63DAAF71)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Drivers/CMSIS -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/System/sys -I ../Drivers/System/delay -I ../Drivers/System/usart -I ../User -I ../Drivers/BSP/LED -I ../Drivers/BSP/BT -I ../Drivers/BSP/OLED -I ../Middlewares/Game-ID:/Users/YEWAN/AppData/Local/Arm/Packs/Keil/STM32G0xx_DFP/1.4.0/Drivers/CMSIS/Device/ST/STM32G0xx/Include-D__UVISION_VERSION="538" -DSTM32G030xx -DUSE_HAL_DRIVER-o ./objects/aircraftwar.o -MD)
-I (..\Middlewares\Game\AircraftWar.h)(0x63DAB626)
+I (..\Middlewares\Game\AircraftWar.h)(0x63DAB6C2)
 I (D:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x637AECBC)
 I (D:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x637AECBC)
 I (..\Drivers\BSP\OLED\oled.h)(0x63D6ADF9)
@@ -1813,7 +1813,7 @@ I (..\Middlewares\Game\AW_Bullet.h)(0x63DAB503)
 I (..\Middlewares\Game\AW_Bg.h)(0x63D6AC45)
 F (..\Middlewares\Game\AW_Bullet.c)(0x63D8EB2D)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Drivers/CMSIS -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/System/sys -I ../Drivers/System/delay -I ../Drivers/System/usart -I ../User -I ../Drivers/BSP/LED -I ../Drivers/BSP/BT -I ../Drivers/BSP/OLED -I ../Middlewares/Game-ID:/Users/YEWAN/AppData/Local/Arm/Packs/Keil/STM32G0xx_DFP/1.4.0/Drivers/CMSIS/Device/ST/STM32G0xx/Include-D__UVISION_VERSION="538" -DSTM32G030xx -DUSE_HAL_DRIVER-o ./objects/aw_bullet.o -MD)
 I (..\Middlewares\Game\AW_Bullet.h)(0x63DAB503)
-I (..\Middlewares\Game\AircraftWar.h)(0x63DAB626)
+I (..\Middlewares\Game\AircraftWar.h)(0x63DAB6C2)
 I (D:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x637AECBC)
 I (D:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x637AECBC)
 I (..\Drivers\BSP\OLED\oled.h)(0x63D6ADF9)
@@ -1886,7 +1886,7 @@ I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_wwdg.h)(0x60D16A7A)
 I (D:\Keil_v5\ARM\ARMCLANG\include\stdlib.h)(0x637AECBC)
 F (..\Middlewares\Game\AW_Player.c)(0x63DAB503)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Drivers/CMSIS -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/System/sys -I ../Drivers/System/delay -I ../Drivers/System/usart -I ../User -I ../Drivers/BSP/LED -I ../Drivers/BSP/BT -I ../Drivers/BSP/OLED -I ../Middlewares/Game-ID:/Users/YEWAN/AppData/Local/Arm/Packs/Keil/STM32G0xx_DFP/1.4.0/Drivers/CMSIS/Device/ST/STM32G0xx/Include-D__UVISION_VERSION="538" -DSTM32G030xx -DUSE_HAL_DRIVER-o ./objects/aw_player.o -MD)
 I (..\Middlewares\Game\AW_Player.h)(0x63DAB503)
-I (..\Middlewares\Game\AircraftWar.h)(0x63DAB626)
+I (..\Middlewares\Game\AircraftWar.h)(0x63DAB6C2)
 I (D:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x637AECBC)
 I (D:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x637AECBC)
 I (..\Drivers\BSP\OLED\oled.h)(0x63D6ADF9)
