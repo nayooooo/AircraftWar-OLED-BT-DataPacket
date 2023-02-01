@@ -9,8 +9,12 @@
 
 #include "main.h"
 
+#include "AW_Player.h"
+
 int main()
 {
+	Point p = { 0, 20 };
+	
 	HAL_Init();
 	
 	sys_stm32_clock_init();

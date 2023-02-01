@@ -1,6 +1,7 @@
 #include "AircraftWar.h"
 
 #include "AW_Bg.h"
+#include "AW_Player.h"
 
 /*================================================================
 	显示载体相关变量信息
@@ -71,6 +72,7 @@ void AW_Game_Init(void)
 	// 初始化游戏场景
 	AW_Screen_Show_BG(AW_SS.bg);
 	// 初始化玩家角色
+	AW_Player_Init();
 }
 
 /**
