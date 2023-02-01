@@ -1,7 +1,6 @@
 #include "AircraftWar.h"
 
 #include "AW_Bg.h"
-#include "AW_Player.h"
 
 /*================================================================
 	显示载体相关变量信息

@@ -2,6 +2,7 @@
 #define __AW_PLAYER_H
 
 #include "AircraftWar.h"
+
 #include "AW_Bullet.h"
 
 /*================================================================
@@ -19,7 +20,7 @@
 
 typedef struct{
 	AW_Bullet_t bullets[AW_PLAYER_BULLETS_NUM_MAX];		// 子弹
-	Point p;					// 位置坐标
+	AW_Point p;					// 位置坐标
 	uint8_t bloodVol;			// 血量
 	const uint8_t *map;			// 贴图
 	uint8_t mapWidth;			// 贴图宽度
@@ -32,11 +33,11 @@ typedef struct{
 
 void AW_Player_Init(void);
 
-const Point *AW_Player_Get_Coor(void);
+const AW_Point *AW_Player_Get_Coor(void);
 uint8_t AW_Player_Get_Width(void);
 uint8_t AW_Player_Get_Height(void);
 
-void AW_Player_Move(Point p);
+void AW_Player_Move(AW_Point p);
 void AW_Player_Update(void);
 
 #endif /* __AW_PLAYER_H */

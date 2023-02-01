@@ -65,5 +65,5 @@
   ..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_usart_ex.h \
   ..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_wwdg.h \
   D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdlib.h \
-  ..\Middlewares\Game\AW_Bg.h ..\Middlewares\Game\AW_Player.h \
-  ..\Middlewares\Game\AW_Bullet.h
+  ..\Middlewares\Game\AW_Player.h ..\Middlewares\Game\AW_Bullet.h \
+  ..\Middlewares\Game\AW_Bg.h

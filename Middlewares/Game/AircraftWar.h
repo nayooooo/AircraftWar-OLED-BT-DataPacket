@@ -8,6 +8,9 @@
 #include "stdio.h"		// 调试输出
 #include "stdint.h"
 #include "oled.h"		// 显示载体
+typedef Point AW_Point;
+
+#include "AW_Player.h"
 
 /*================================================================
 	显示载体相关宏

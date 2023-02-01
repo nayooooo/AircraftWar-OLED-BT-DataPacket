@@ -18,15 +18,15 @@ void AW_Player_Update(void)
 }
 
 /**
- * @fn const Point *AW_Player_Get_Coor(Point p)
+ * @fn const AW_Point *AW_Player_Get_Coor(void)
  * @brief 获得游戏角色坐标
  *
  * @return [const Point*] 玩家角色坐标的指针
  *
  */
-const Point *AW_Player_Get_Coor(void)
+const AW_Point *AW_Player_Get_Coor(void)
 {
-	return ((const Point*)&player.p);
+	return ((const AW_Point*)&player.p);
 }
 
 /**
@@ -54,13 +54,13 @@ uint8_t AW_Player_Get_Height(void)
 }
 
 /**
- * @fn void AW_Player_Move(Point p)
+ * @fn void AW_Player_Move(AW_Point p)
  * @brief 游戏角色移动到新的坐标
  *
  * @param [p] 新的坐标
  *
  */
-void AW_Player_Move(Point p)
+void AW_Player_Move(AW_Point p)
 {
 	if (p.x * AW_SS.pixelSize + player.mapWidth > AW_SS.width) return;
 	if (p.y * AW_SS.pixelSize + player.mapHeight > AW_SS.height) return;
