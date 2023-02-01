@@ -73,6 +73,8 @@ void AW_Game_Init(void)
 	AW_Screen_Show_BG(AW_SS.bg);
 	// 初始化玩家角色
 	AW_Player_Init();
+	// 刷新显示载体
+	AW_Screen_Refresh();
 }
 
 /**
@@ -82,5 +84,8 @@ void AW_Game_Init(void)
  */
 void AW_Screen_Refresh(void)
 {
+	AW_Screen_Show_BG(AW_SS.bg);
+	AW_Player_Update();
+	
 	OLED_Refresh_Gram();
 }

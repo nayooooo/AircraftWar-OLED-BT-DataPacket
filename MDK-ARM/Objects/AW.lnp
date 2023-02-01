@@ -22,6 +22,7 @@
 ".\objects\led.o"
 ".\objects\bt.o"
 ".\objects\bt_dp.o"
+".\objects\bt_event.o"
 ".\objects\iic.o"
 ".\objects\oled.o"
 ".\objects\aircraftwar.o"

@@ -1,6 +1,7 @@
 ./objects/bt_dp.o: ..\Drivers\BSP\BT\bt_dp.c ..\Drivers\BSP\BT\bt_dp.h \
-  ..\Drivers\System\sys\sys.h ..\Drivers\CMSIS\stm32g0xx.h \
-  ..\Drivers\CMSIS\stm32g030xx.h ..\Drivers\CMSIS\core_cm0plus.h \
+  ..\Drivers\BSP\BT\bt.h ..\Drivers\System\sys\sys.h \
+  ..\Drivers\CMSIS\stm32g0xx.h ..\Drivers\CMSIS\stm32g030xx.h \
+  ..\Drivers\CMSIS\core_cm0plus.h \
   D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdint.h \
   ..\Drivers\CMSIS\cmsis_version.h ..\Drivers\CMSIS\cmsis_compiler.h \
   ..\Drivers\CMSIS\cmsis_armclang.h ..\Drivers\CMSIS\mpu_armv7.h \

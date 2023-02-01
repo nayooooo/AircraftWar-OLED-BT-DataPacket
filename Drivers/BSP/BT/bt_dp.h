@@ -1,7 +1,7 @@
 #ifndef __BT_DP_H
 #define __BT_DP_H
 
-#include "sys.h"
+#include "bt.h"
 
 #define BT_DATAPACKET_RX_FLAG_NULL						(0X00)
 #define BT_DATAPACKET_RX_FLAG_ISSTOP					(0X01)

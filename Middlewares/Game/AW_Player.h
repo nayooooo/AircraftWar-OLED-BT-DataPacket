@@ -32,6 +32,11 @@ typedef struct{
 
 void AW_Player_Init(void);
 
+const Point *AW_Player_Get_Coor(void);
+uint8_t AW_Player_Get_Width(void);
+uint8_t AW_Player_Get_Height(void);
+
 void AW_Player_Move(Point p);
+void AW_Player_Update(void);
 
 #endif /* __AW_PLAYER_H */

@@ -5,23 +5,10 @@
 #include "usart.h"
 
 /*=========================================================
-	extern BT action
-=========================================================*/
-
-static void BT_Up(void);
-static void BT_Down(void);
-static void BT_Left(void);
-static void BT_Right(void);
-
-static void BT_SetAction(void);
-
-static void BT_Move(void);
-static void BT_Stop(void);
-
-/*=========================================================
 	BT状态机列表
 =========================================================*/
 
+#include "bt_event.h"
 static BT_StateTable_t BT_StateTable[] = {
 	{ BT_STATETABLE_STOP, BT_Stop },									// BT停止
 	{ BT_STATETABLE_SETACTION, BT_SetAction },							// BT设置动作
@@ -31,45 +18,6 @@ static BT_StateTable_t BT_StateTable[] = {
 	{ BT_STATETABLE_TURNRIGHT, BT_Right },								// BT右
 	{ BT_STATETABLE_NULL, NULL },										// 状态机列表末尾
 };
-
-/*=========================================================
-	BT action
-=========================================================*/
-
-static void BT_Up(void)
-{
-	printf("BT_Up\r\n");
-}
-
-static void BT_Down(void)
-{
-	printf("BT_Down\r\n");
-}
-
-static void BT_Left(void)
-{
-	printf("BT_Left\r\n");
-}
-
-static void BT_Right(void)
-{
-	printf("BT_Right\r\n");
-}
-
-static void BT_SetAction(void)
-{
-	printf("BT_SetAction\r\n");
-}
-
-static void BT_Move(void)
-{
-	printf("BT_Move\r\n");
-}
-
-static void BT_Stop(void)
-{
-	printf("BT_Stop\r\n");
-}
 
 /*=========================================================
 	BT data packet Rx decode and handle

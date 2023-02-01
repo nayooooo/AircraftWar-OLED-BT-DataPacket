@@ -23,7 +23,7 @@ int main()
 	
 	LED_Init();
 	BT_Init();
-	AW_Game_Init(); AW_Screen_Refresh();
+	AW_Game_Init();
 	
 	while(1)
 	{
@@ -31,6 +31,7 @@ int main()
 			BT_Get_DataPacket_Rx();  // 读取接收到的这包数据
 			BT_DataPacket_Show_USART1();
 			BT_DataPacket_Rx_Handle();
+			AW_Screen_Refresh();
 		}
 	}
 }

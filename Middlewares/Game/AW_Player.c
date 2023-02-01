@@ -7,14 +7,50 @@ const unsigned char player_Map1[] = {
 };
 
 /**
- * @fn static void AW_Player_Update(void)
+ * @fn void AW_Player_Update(void)
  * @brief 将玩家角色更新到显示载体的缓存中
  *
  */
-static void AW_Player_Update(void)
+void AW_Player_Update(void)
 {
 	OLED_ShowBMP(player.p.x * AW_SS.pixelSize, player.p.y * AW_SS.pixelSize,
 					player.map, player.mapWidth, player.mapHeight, FILL);
+}
+
+/**
+ * @fn const Point *AW_Player_Get_Coor(Point p)
+ * @brief 获得游戏角色坐标
+ *
+ * @return [const Point*] 玩家角色坐标的指针
+ *
+ */
+const Point *AW_Player_Get_Coor(void)
+{
+	return ((const Point*)&player.p);
+}
+
+/**
+ * @fn uint8_t AW_Player_Get_Width(Point p)
+ * @brief 获得游戏角色宽度
+ *
+ * @return [uint8_t] 游戏角色宽度
+ *
+ */
+uint8_t AW_Player_Get_Width(void)
+{
+	return player.mapWidth;
+}
+
+/**
+ * @fn uint8_t AW_Player_Get_Height(Point p)
+ * @brief 获得游戏角色高度
+ *
+ * @return [uint8_t] 游戏角色高度
+ *
+ */
+uint8_t AW_Player_Get_Height(void)
+{
+	return player.mapHeight;
 }
 
 /**
@@ -26,6 +62,9 @@ static void AW_Player_Update(void)
  */
 void AW_Player_Move(Point p)
 {
+	if (p.x * AW_SS.pixelSize + player.mapWidth > AW_SS.width) return;
+	if (p.y * AW_SS.pixelSize + player.mapHeight > AW_SS.height) return;
+	
 	player.p.x = p.x;
 	player.p.y = p.y;
 	AW_Player_Update();

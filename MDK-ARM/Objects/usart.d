@@ -65,4 +65,4 @@
   ..\Drivers\System\usart\usart.h \
   D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h \
   D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h \
-  ..\Drivers\BSP\BT\bt_dp.h
+  ..\Drivers\BSP\BT\bt_dp.h ..\Drivers\BSP\BT\bt.h

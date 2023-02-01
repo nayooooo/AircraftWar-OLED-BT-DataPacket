@@ -525,6 +525,11 @@
               <FilePath>..\Drivers\BSP\BT\bt_dp.c</FilePath>
             </File>
             <File>
+              <FileName>bt_event.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Drivers\BSP\BT\bt_event.c</FilePath>
+            </File>
+            <File>
               <FileName>iic.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Drivers\BSP\OLED\iic.c</FilePath>

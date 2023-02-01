@@ -1,4 +1,5 @@
-./objects/bt.o: ..\Drivers\BSP\BT\bt.c ..\Drivers\BSP\BT\bt.h \
+./objects/bt_event.o: ..\Drivers\BSP\BT\bt_event.c \
+  ..\Drivers\BSP\BT\bt_event.h ..\Drivers\BSP\BT\bt.h \
   ..\Drivers\System\sys\sys.h ..\Drivers\CMSIS\stm32g0xx.h \
   ..\Drivers\CMSIS\stm32g030xx.h ..\Drivers\CMSIS\core_cm0plus.h \
   D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdint.h \
@@ -65,4 +66,6 @@
   ..\Drivers\BSP\BT\bt_dp.h \
   D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h \
   D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h \
-  ..\Drivers\System\usart\usart.h ..\Drivers\BSP\BT\bt_event.h
+  ..\Middlewares\Game\AircraftWar.h ..\Drivers\BSP\OLED\oled.h \
+  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdlib.h \
+  ..\Middlewares\Game\AW_Player.h ..\Middlewares\Game\AW_Bullet.h
