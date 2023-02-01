@@ -36,3 +36,39 @@ void BT_Get_DataPacket_Rx(void)
 		USART2_RX_STA &= USART2_RX_STA_OVERFLOW;
 	}
 }
+
+/*=========================================================
+	BT data packet show
+=========================================================*/
+
+/**
+ * @fn BT_Err_Enum_t BT_DataPacket_Show_USART1(void)
+ * @brief 通过串口1打印蓝牙接收到的数据包
+ * @details 接收到的数据包必须是正确的数据包
+ *
+ * @return [BT_Err_Enum_t] 函数执行状态
+ *			BT_OK		->	函数执行正确
+ *			BT_ERROR	->	函数执行错误
+ *
+ */
+void BT_DataPacket_Show_USART1(void)
+{
+	int8_t temp = dpr[0].rawData.flag;
+	
+	if (dpr[0].check_Byte != temp) {
+		printf("\r\n");
+		printf("rec dp err!\r\n");
+		return;
+	}
+	
+	printf("\r\n");
+	printf("========================================\r\n");
+	printf("dpr->PH:   %d\r\n", dpr[0].packet_Head);
+	printf("dpr->flag: %d\r\n", dpr[0].rawData.flag);
+	printf("dpr->CB:   %d\r\n", dpr[0].check_Byte);
+	printf("dpr->PT:   %d\r\n", dpr[0].packet_Tail);
+	printf("========================================\r\n");
+	printf("\r\n");
+	
+	return;
+}

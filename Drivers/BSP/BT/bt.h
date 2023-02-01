@@ -5,33 +5,43 @@
 
 #include "bt_dp.h"
 
+typedef enum{
+	BT_OK = 0,
+	BT_ERROR = 1
+} BT_Err_Enum_t;
+
 /* BT micro ----------------------------------------------*/
 
-#define BT_BOUND_RATE					(9600UL)
+#define BT_BOUND_RATE					(115200UL)
+
+/* BT state table ---------------------------------------*/
+
+#define BT_STATETABLE_FLAG_EVENT			(6)		// 标志位事件数目
+#define BT_STATETABLE_VARI_EVENT			(0)		// 变量事件数目
 
 /* BT state machine --------------------------------------*/
 
 // BT事件枚举
 typedef enum{
-	BT_STATEMACHINE_NULL,						// BT无事件
-	BT_STATEMACHINE_STOP,						// BT停止
-	BT_STATEMACHINE_SETACTION,					// BT设置动作
-	BT_STATEMACHINE_TURNUP,						// BT前进
-	BT_STATEMACHINE_TURNDOWN,					// BT后退
-	BT_STATEMACHINE_TURNLEFT,					// BT左转
-	BT_STATEMACHINE_TURNRIGHT,					// BT右转
-}BT_StateMachine_Event_Enum_t;
-typedef struct BT_StateMachine_Event_Arr{
+	BT_STATETABLE_NULL,						// BT无事件
+	BT_STATETABLE_STOP,						// BT停止
+	BT_STATETABLE_SETACTION,					// BT设置动作
+	BT_STATETABLE_TURNUP,						// BT前进
+	BT_STATETABLE_TURNDOWN,					// BT后退
+	BT_STATETABLE_TURNLEFT,					// BT左转
+	BT_STATETABLE_TURNRIGHT,					// BT右转
+}BT_StateTable_Event_Enum_t;
+typedef struct BT_StateTable_Event_Arr{
 	uint8_t num;			// 本次解码的事件数目
 	// 本次解码的事件列表
-	BT_StateMachine_Event_Enum_t events[\
-		BT_STATEMACHINE_FLAG_EVENT + BT_STATEMACHINE_VARI_EVENT];
-}BT_StateMachine_Event_Arr_t;
-typedef void(*BT_StateMachine_Action)(void);
+	BT_StateTable_Event_Enum_t events[\
+		BT_STATETABLE_FLAG_EVENT + BT_STATETABLE_VARI_EVENT];
+}BT_StateTable_Event_Arr_t;
+typedef void(*BT_StateTable_Action)(void);
 typedef struct{
-	BT_StateMachine_Event_Enum_t event;		// BT事件
-	BT_StateMachine_Action act;				// BT动作
-}BT_StateMachine_t;
+	BT_StateTable_Event_Enum_t event;		// BT事件
+	BT_StateTable_Action act;				// BT动作
+}BT_StateTable_t;
 
 /* BT functions ------------------------------------------*/
 

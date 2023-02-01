@@ -39,13 +39,10 @@ extern BT_DataPacket_Rx_t dpr[1];
 #define BT_DATAPACKET_TAIL_DEFAULT		(0X5A)
 #define BT_DATAPACKET_TAIL_ERROR		(0X00)
 
-/* BT state machine -------------------------------------*/
-
-#define BT_STATEMACHINE_FLAG_EVENT			(6)		// 标志位事件数目
-#define BT_STATEMACHINE_VARI_EVENT			(0)		// 变量事件数目
-
 /* BT functions -----------------------------------------*/
 
 void BT_Get_DataPacket_Rx(void);
+
+void BT_DataPacket_Show_USART1(void);
 
 #endif /* __BT_DP_H */

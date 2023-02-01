@@ -22,14 +22,14 @@ static void BT_Stop(void);
 	BT状态机列表
 =========================================================*/
 
-static BT_StateMachine_t BT_StateMachine_Table[] = {
-	{ BT_STATEMACHINE_STOP, BT_Stop },										// BT停止
-	{ BT_STATEMACHINE_SETACTION, BT_SetAction },							// BT设置动作
-	{ BT_STATEMACHINE_TURNUP, BT_Up },										// BT上
-	{ BT_STATEMACHINE_TURNDOWN, BT_Down },									// BT下
-	{ BT_STATEMACHINE_TURNLEFT, BT_Left },									// BT左
-	{ BT_STATEMACHINE_TURNRIGHT, BT_Right },								// BT右
-	{ BT_STATEMACHINE_NULL, NULL },											// 状态机列表末尾
+static BT_StateTable_t BT_StateTable[] = {
+	{ BT_STATETABLE_STOP, BT_Stop },									// BT停止
+	{ BT_STATETABLE_SETACTION, BT_SetAction },							// BT设置动作
+	{ BT_STATETABLE_TURNUP, BT_Up },									// BT上
+	{ BT_STATETABLE_TURNDOWN, BT_Down },								// BT下
+	{ BT_STATETABLE_TURNLEFT, BT_Left },								// BT左
+	{ BT_STATETABLE_TURNRIGHT, BT_Right },								// BT右
+	{ BT_STATETABLE_NULL, NULL },										// 状态机列表末尾
 };
 
 /*=========================================================
@@ -76,15 +76,15 @@ static void BT_Stop(void)
 =========================================================*/
 
 /**
- * @fn static BT_StateMachine_Event_Arr_t *BT_DataPacket_Rx_Decode(BT_DataPacket_Rx_t dpr)
+ * @fn static BT_StateTable_Event_Arr_t *BT_DataPacket_Rx_Decode(BT_DataPacket_Rx_t dpr)
  * @brief 解码一帧正确的接收数据包，并以事件组结构体的形式返回解码信息
  * @details 该函数不会检查接收数据包的正确性，请开发人员传入数据包之前检查一下
  *
- * @return [BT_StateMachine_Event_Arr_t*] BT事件列表及事件数目
+ * @return [BT_StateTable_Event_Arr_t*] BT事件列表及事件数目
  */
-static BT_StateMachine_Event_Arr_t *BT_DataPacket_Rx_Decode(BT_DataPacket_Rx_t dpr)
+static BT_StateTable_Event_Arr_t *BT_DataPacket_Rx_Decode(BT_DataPacket_Rx_t dpr)
 {
-	static BT_StateMachine_Event_Arr_t event;
+	static BT_StateTable_Event_Arr_t event;
 	uint8_t i;
 	uint8_t temp;
 	
@@ -116,7 +116,7 @@ void BT_DataPacket_Rx_Handle(void)
 {
 	uint8_t i, j;
 	int8_t temp;
-	const BT_StateMachine_Event_Arr_t *event;
+	const BT_StateTable_Event_Arr_t *event;
 	
 	temp = dpr[0].rawData.flag;
 	// 接收数据错误
@@ -128,9 +128,9 @@ void BT_DataPacket_Rx_Handle(void)
 	event = BT_DataPacket_Rx_Decode(dpr[0]);  // 解码获取事件组
 	// 回应状态机事件
 	for (i = 0; i < event->num; i++) {
-		for (j = 0; BT_StateMachine_Table[j].event; j++) {  // 遍历状态机列表
-			if (event->events[i] == BT_StateMachine_Table[j].event) {
-				BT_StateMachine_Table[j].act();
+		for (j = 0; BT_StateTable[j].event; j++) {  // 遍历状态机列表
+			if (event->events[i] == BT_StateTable[j].event) {
+				BT_StateTable[j].act();
 				break;
 			}
 		}
