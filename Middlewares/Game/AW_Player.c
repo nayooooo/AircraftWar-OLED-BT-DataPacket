@@ -55,6 +55,26 @@ uint8_t AW_Player_Get_Height(void)
 }
 
 /**
+ * @fn AW_Bullet_t *AW_Player_Get_First_Ready_Bullet(void)
+ * @brief 获得游戏角色的第一个已准备好的子弹指针
+ *
+ * @return [AW_Bullet_t*] 游戏角色的第一个已准备好的子弹指针
+ *
+ */
+AW_Bullet_t *AW_Player_Get_First_Ready_Bullet(void)
+{
+	uint8_t i;
+	
+	for (i = 0; i < AW_PLAYER_BULLETS_NUM_MAX; i++) {
+		if (player.bullets[i].isLaunch == 0) {  // 已准备好的子弹
+			return &(player.bullets[i]);
+		}
+	}
+	
+	return NULL;
+}
+
+/**
  * @fn void AW_Player_Move(AW_Point p)
  * @brief 游戏角色移动到新的坐标
  *
@@ -80,6 +100,7 @@ void AW_Player_Init(void)
 {
 	for(uint8_t i = 0; i < AW_PLAYER_BULLETS_NUM_MAX; i++) {
 		player.bullets[i].isLaunch = 0;
+		player.bullets[i].shootDir = AW_BULLET_PLAYER_SHOOT_DIR;
 		player.bullets[i].p.x = 0;
 		player.bullets[i].p.y = 0;
 	}

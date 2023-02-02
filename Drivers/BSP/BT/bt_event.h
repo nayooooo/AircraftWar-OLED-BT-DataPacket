@@ -19,6 +19,8 @@ void BT_Down(void);
 void BT_Left(void);
 void BT_Right(void);
 
+void BT_Shoot(void);
+
 void BT_SetAction(void);
 
 void BT_Move(void);

@@ -60,6 +60,14 @@ void BT_Right(void)
 	AW_Player_Move(p);
 }
 
+void BT_Shoot(void)
+{
+	AW_Bullet_t *b = NULL;
+	b = AW_Player_Get_First_Ready_Bullet();
+	if (b != NULL)
+		AW_Bullet_Shoot(b, *AW_Player_Get_Coor());
+}
+
 void BT_SetAction(void)
 {
 	printf("BT_SetAction\r\n");

@@ -16,7 +16,7 @@ typedef enum{
 
 /* BT state table ---------------------------------------*/
 
-#define BT_STATETABLE_FLAG_EVENT			(6)		// 标志位事件数目
+#define BT_STATETABLE_FLAG_EVENT			(7)		// 标志位事件数目
 #define BT_STATETABLE_VARI_EVENT			(0)		// 变量事件数目
 
 /* BT state machine --------------------------------------*/
@@ -25,12 +25,14 @@ typedef enum{
 typedef enum{
 	BT_STATETABLE_NULL,						// BT无事件
 	BT_STATETABLE_STOP,						// BT停止
-	BT_STATETABLE_SETACTION,					// BT设置动作
-	BT_STATETABLE_TURNUP,						// BT前进
+	BT_STATETABLE_SETACTION,				// BT设置动作
+	BT_STATETABLE_TURNUP,					// BT前进
 	BT_STATETABLE_TURNDOWN,					// BT后退
 	BT_STATETABLE_TURNLEFT,					// BT左转
-	BT_STATETABLE_TURNRIGHT,					// BT右转
+	BT_STATETABLE_TURNRIGHT,				// BT右转
+	BT_STATETABLE_SHOOT,					// BT发射子弹
 }BT_StateTable_Event_Enum_t;
+#define BT_STATETABLE_ENDER			BT_STATETABLE_SHOOT
 typedef struct BT_StateTable_Event_Arr{
 	uint8_t num;			// 本次解码的事件数目
 	// 本次解码的事件列表

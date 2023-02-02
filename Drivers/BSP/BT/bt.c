@@ -10,13 +10,14 @@
 
 #include "bt_event.h"
 static BT_StateTable_t BT_StateTable[] = {
-	{ BT_STATETABLE_STOP, BT_Stop },									// BT停止
-	{ BT_STATETABLE_SETACTION, BT_SetAction },							// BT设置动作
-	{ BT_STATETABLE_TURNUP, BT_Up },									// BT上
-	{ BT_STATETABLE_TURNDOWN, BT_Down },								// BT下
-	{ BT_STATETABLE_TURNLEFT, BT_Left },								// BT左
-	{ BT_STATETABLE_TURNRIGHT, BT_Right },								// BT右
-	{ BT_STATETABLE_NULL, NULL },										// 状态机列表末尾
+	{ BT_STATETABLE_STOP, BT_Stop },						// BT停止
+	{ BT_STATETABLE_SETACTION, BT_SetAction },				// BT设置动作
+	{ BT_STATETABLE_TURNUP, BT_Up },						// BT上
+	{ BT_STATETABLE_TURNDOWN, BT_Down },					// BT下
+	{ BT_STATETABLE_TURNLEFT, BT_Left },					// BT左
+	{ BT_STATETABLE_TURNRIGHT, BT_Right },					// BT右
+	{ BT_STATETABLE_SHOOT, BT_Shoot },						// BT发射子弹
+	{ BT_STATETABLE_NULL, NULL },							// 状态机列表末尾
 };
 
 /*=========================================================
@@ -50,7 +51,7 @@ static BT_StateTable_Event_Arr_t *BT_DataPacket_Rx_Decode(BT_DataPacket_Rx_t dpr
 			event.events[event.num] = i + 1;
 			event.num++;
 		}
-	} while(temp != BT_DATAPACKET_RX_FLAG_RIGHT);
+	} while(temp != BT_STATETABLE_ENDER);
 	/* 变量 */
 	
 	return &event;

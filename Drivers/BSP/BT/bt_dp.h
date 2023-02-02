@@ -10,10 +10,12 @@
 #define BT_DATAPACKET_RX_FLAG_DOWN						(0X08)
 #define BT_DATAPACKET_RX_FLAG_LEFT						(0X10)
 #define BT_DATAPACKET_RX_FLAG_RIGHT						(0X20)
+#define BT_DATAPACKET_RX_FLAG_SHOOT						(0X40)
 /* Rx */
 #define BT_DP_RAWDATA_BYTE_NUM				(1)								// 数据包中原数据字节数
 #define BT_DP_TOTAL_BYTE_NUM				(BT_DP_RAWDATA_BYTE_NUM+3)		// 数据包字节数
 typedef struct BT_DataPacket_Rx_RawData{
+	// bit6		->	shoot
 	// bit5		->	right
 	// bit4		->	left
 	// bit3		->	down

@@ -12,7 +12,7 @@
 #define AW_PLAYER_BULLETS_NUM_MAX				(5)
 #define AW_PLAYER_PX_DEFAULT					(0)
 #define AW_PLAYER_PY_DEFAULT					(AW_SS.height / AW_SS.pixelSize / 2)
-#define AW_PLAYER_BLOODVOL_DEFAULT				(100)
+#define AW_PLAYER_BLOODVOL_DEFAULT				(3)
 
 /*================================================================
 	游戏成员结构体
@@ -36,6 +36,7 @@ void AW_Player_Init(void);
 const AW_Point *AW_Player_Get_Coor(void);
 uint8_t AW_Player_Get_Width(void);
 uint8_t AW_Player_Get_Height(void);
+AW_Bullet_t *AW_Player_Get_First_Ready_Bullet(void);
 
 void AW_Player_Move(AW_Point p);
 void AW_Player_Update(void);
