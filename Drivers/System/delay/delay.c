@@ -60,3 +60,13 @@ void delay_Init(uint8_t SYSCLK_M)
 	HAL_SYSTICK_CLKSourceConfig(SYSTICK_CLKSOURCE_HCLK_DIV8);
 	fac_us = SYSCLK_M / 8;
 }
+
+uint32_t delay_Get_SysTick_Val(void)
+{
+	return SysTick->VAL;
+}
+
+void delay_Set_SysTick_Val(uint32_t val)
+{
+	SysTick->VAL = val;
+}

@@ -3,6 +3,10 @@
 
 #include "string.h"
 
+const unsigned char bullet_Map1[] = {
+	0X00,0X70,0X70,0X70,0X20,0X00
+};
+
 /*================================================================
 	已发射子弹容器
 ================================================================*/
@@ -91,15 +95,59 @@ static AW_Err_Enum_t AW_Bullet_Shot_Remove(
  * @fn void AW_Bullet_Move_CB(void)
  * @brief 已经发射的子弹的回调函数
  *		  用来更新已发射子弹的位置
+ * @return [AW_Err_Enum_t] 函数执行结果
+ *			AW_OK		->	函数执行成功
+ *			AW_ERROR	->	函数执行失败
  *
  */
-void AW_Bullet_Move_CB(void)
+AW_Err_Enum_t AW_Bullet_Move_CB(void)
 {
+	AW_Bullet_Shot_Link const head = AW_BS_Head;
+	AW_Bullet_Shot_Node * temp = head;
+	
+	if(head == NULL) return AW_ERROR;
+	
+	do {
+		temp->p.x += temp->movementSpeed;
+		if (temp->p.x * AW_SS.pixelSize + temp->mapWidth > AW_SS.width) {  // 右溢出
+			temp->p.x = (AW_SS.width - temp->mapWidth) / AW_SS.pixelSize;
+			if (AW_OK == AW_Bullet_Shot_Remove(head, temp)) {  // 移除溢出的子弹
+				temp->isLaunch = 0;
+			}
+		}
+		temp = temp->next;
+	} while (temp != head);
+	
+	return AW_OK;
 }
 
 /*================================================================
 	子弹相关函数
 ================================================================*/
+
+/**
+ * @fn void AW_Bullet_Update(void)
+ * @brief 将子弹更新到显示载体的缓存中
+ * @return [AW_Err_Enum_t] 函数执行结果
+ *			AW_OK		->	函数执行成功
+ *			AW_ERROR	->	函数执行失败
+ *
+ */
+AW_Err_Enum_t AW_Bullet_Update(void)
+{
+	AW_Bullet_Shot_Link const head = AW_BS_Head;
+	AW_Bullet_Shot_Node *temp = head;
+	
+	if(head == NULL) return AW_ERROR;
+	
+	do {
+		OLED_ShowBMP(temp->p.x * AW_SS.pixelSize, temp->p.y * AW_SS.pixelSize,
+						temp->map, temp->mapWidth, temp->mapHeight, FILL);
+		temp = temp->next;
+	} while (temp != head);
+	
+	return AW_OK;
+}
 
 /**
  * @fn AW_Err_Enum_t AW_Bullet_Shoot(AW_Bullet_t *bullet, AW_Point p)
@@ -132,8 +180,12 @@ AW_Err_Enum_t AW_Bullet_Init(AW_Bullet_t *bullet)
 	bullet->next = NULL;
 	bullet->isLaunch = 0;
 	bullet->shootDir = AW_BULLET_PLAYER_SHOOT_DIR;
+	bullet->movementSpeed = 10;
 	bullet->p.x = 0;
 	bullet->p.y = 0;
+	bullet->map = bullet_Map1;
+	bullet->mapWidth = 6;
+	bullet->mapHeight = 5;
 	
 	return AW_OK;
 }

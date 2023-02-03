@@ -153,7 +153,7 @@
         <Ww>
           <count>0</count>
           <WinNumber>1</WinNumber>
-          <ItemText>USART2_RX_BUF[USART2_RX_STA&amp;USART2_RX_STA_REC_NUM]</ItemText>
+          <ItemText>player</ItemText>
         </Ww>
       </WatchWindow1>
       <Tracepoint>

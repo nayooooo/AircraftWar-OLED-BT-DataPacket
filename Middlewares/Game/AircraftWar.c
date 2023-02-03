@@ -86,6 +86,7 @@ void AW_Screen_Refresh(void)
 {
 	AW_Screen_Show_BG(AW_SS.bg);
 	AW_Player_Update();
+	AW_Bullet_Update();
 	
 	OLED_Refresh_Gram();
 }

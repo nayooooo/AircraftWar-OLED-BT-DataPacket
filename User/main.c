@@ -9,6 +9,8 @@
 
 #include "main.h"
 
+extern AW_Err_Enum_t AW_Bullet_Move_CB(void);
+
 int main()
 {
 	Point p = { 0, 20 };
@@ -29,6 +31,7 @@ int main()
 			BT_Get_DataPacket_Rx();  // 读取接收到的这包数据
 			BT_DataPacket_Show_USART1();
 			BT_DataPacket_Rx_Handle();
+			AW_Bullet_Move_CB();
 			AW_Screen_Refresh();
 		}
 	}
