@@ -8,6 +8,8 @@
 ================================================================*/
 
 typedef struct AW_Bullet{
+	struct AW_Bullet *prev;
+	struct AW_Bullet *next;
 	uint8_t isLaunch: 1;		// 子弹发射出去了
 	uint8_t shootDir;			// 子弹发射方向
 	AW_Point p;					// 位置坐标
@@ -27,6 +29,8 @@ typedef enum{
 /*================================================================
 	子弹相关函数
 ================================================================*/
+
+AW_Err_Enum_t AW_Bullet_Init(AW_Bullet_t *bullet);
 
 AW_Err_Enum_t AW_Bullet_Shoot(AW_Bullet_t *bullet, AW_Point p);
 

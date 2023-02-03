@@ -8,11 +8,8 @@
 ================================================================*/
 
 /* ÒÑ·¢Éä×Óµ¯ */
-typedef struct AW_Bullet_Shot{
-	struct AW_Bullet_Shot *prev;
-	struct AW_Bullet_Shot *next;
-	AW_Bullet_t *bullet;
-}AW_Bullet_Shot_Node, *AW_Bullet_Shot_Link;
+typedef AW_Bullet_t  AW_Bullet_Shot_Node;
+typedef AW_Bullet_t* AW_Bullet_Shot_Link;
 static AW_Bullet_Shot_Link AW_BS_Head = NULL;
 
 /**
@@ -122,7 +119,21 @@ AW_Err_Enum_t AW_Bullet_Shoot(AW_Bullet_t *bullet, AW_Point p)
 	}
 	
 	memcpy(&(bullet->p), &p, sizeof(AW_Point));
-	bullet->isLaunch = 1;
+	if (AW_OK == AW_Bullet_Shot_Add(AW_BS_Head, bullet))
+		bullet->isLaunch = 1;
+	else return AW_ERROR;
+	
+	return AW_OK;
+}
+
+AW_Err_Enum_t AW_Bullet_Init(AW_Bullet_t *bullet)
+{
+	bullet->prev = NULL;
+	bullet->next = NULL;
+	bullet->isLaunch = 0;
+	bullet->shootDir = AW_BULLET_PLAYER_SHOOT_DIR;
+	bullet->p.x = 0;
+	bullet->p.y = 0;
 	
 	return AW_OK;
 }

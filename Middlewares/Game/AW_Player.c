@@ -99,10 +99,7 @@ void AW_Player_Move(AW_Point p)
 void AW_Player_Init(void)
 {
 	for(uint8_t i = 0; i < AW_PLAYER_BULLETS_NUM_MAX; i++) {
-		player.bullets[i].isLaunch = 0;
-		player.bullets[i].shootDir = AW_BULLET_PLAYER_SHOOT_DIR;
-		player.bullets[i].p.x = 0;
-		player.bullets[i].p.y = 0;
+		AW_Bullet_Init(&(player.bullets[i]));
 	}
 	player.p.x = AW_PLAYER_PX_DEFAULT;
 	player.p.y = AW_PLAYER_PY_DEFAULT;
