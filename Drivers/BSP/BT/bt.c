@@ -51,7 +51,7 @@ static BT_StateTable_Event_Arr_t *BT_DataPacket_Rx_Decode(BT_DataPacket_Rx_t dpr
 			event.events[event.num] = i + 1;
 			event.num++;
 		}
-	} while(temp != BT_STATETABLE_ENDER);
+	} while(temp != BT_DATAPACKET_RX_FLAG_ENDER);
 	/* ±‰¡ø */
 	
 	return &event;

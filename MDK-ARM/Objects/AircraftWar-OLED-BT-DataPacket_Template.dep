@@ -74,8 +74,8 @@ I (..\Drivers\System\delay\delay.h)(0x63D2D1FC)
 I (..\Drivers\System\usart\usart.h)(0x63D5294F)
 I (D:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x637AECBC)
 I (..\Drivers\BSP\LED\led.h)(0x63D3BDD0)
-I (..\Drivers\BSP\BT\bt.h)(0x63DBB80E)
-I (..\Drivers\BSP\BT\bt_dp.h)(0x63DBB80E)
+I (..\Drivers\BSP\BT\bt.h)(0x63DC246C)
+I (..\Drivers\BSP\BT\bt_dp.h)(0x63DC246C)
 I (..\Drivers\BSP\OLED\oled.h)(0x63D6ADF9)
 I (D:\Keil_v5\ARM\ARMCLANG\include\stdlib.h)(0x637AECBC)
 I (..\Middlewares\Game\AircraftWar.h)(0x63DABFEB)
@@ -1295,8 +1295,8 @@ I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_wwdg.h)(0x60D16A7A)
 I (..\Drivers\System\usart\usart.h)(0x63D5294F)
 I (D:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x637AECBC)
 I (D:\Keil_v5\ARM\ARMCLANG\include\string.h)(0x637AECBC)
-I (..\Drivers\BSP\BT\bt_dp.h)(0x63DBB80E)
-I (..\Drivers\BSP\BT\bt.h)(0x63DBB80E)
+I (..\Drivers\BSP\BT\bt_dp.h)(0x63DC246C)
+I (..\Drivers\BSP\BT\bt.h)(0x63DC246C)
 F (..\Drivers\BSP\LED\led.c)(0x63D3BDD0)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Drivers/CMSIS -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/System/sys -I ../Drivers/System/delay -I ../Drivers/System/usart -I ../User -I ../Drivers/BSP/LED -I ../Drivers/BSP/BT -I ../Drivers/BSP/OLED -I ../Middlewares/Game-ID:/Users/YEWAN/AppData/Local/Arm/Packs/Keil/STM32G0xx_DFP/1.4.0/Drivers/CMSIS/Device/ST/STM32G0xx/Include-D__UVISION_VERSION="538" -DSTM32G030xx -DUSE_HAL_DRIVER-o ./objects/led.o -MD)
 I (..\Drivers\BSP\LED\led.h)(0x63D3BDD0)
 I (..\Drivers\System\sys\sys.h)(0x63D54B6E)
@@ -1366,8 +1366,8 @@ I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_uart_ex.h)(0x60D16A60)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_usart.h)(0x60D16A6A)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_usart_ex.h)(0x60D16A6A)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_wwdg.h)(0x60D16A7A)
-F (..\Drivers\BSP\BT\bt.c)(0x63DBB88F)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Drivers/CMSIS -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/System/sys -I ../Drivers/System/delay -I ../Drivers/System/usart -I ../User -I ../Drivers/BSP/LED -I ../Drivers/BSP/BT -I ../Drivers/BSP/OLED -I ../Middlewares/Game-ID:/Users/YEWAN/AppData/Local/Arm/Packs/Keil/STM32G0xx_DFP/1.4.0/Drivers/CMSIS/Device/ST/STM32G0xx/Include-D__UVISION_VERSION="538" -DSTM32G030xx -DUSE_HAL_DRIVER-o ./objects/bt.o -MD)
-I (..\Drivers\BSP\BT\bt.h)(0x63DBB80E)
+F (..\Drivers\BSP\BT\bt.c)(0x63DC246C)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Drivers/CMSIS -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/System/sys -I ../Drivers/System/delay -I ../Drivers/System/usart -I ../User -I ../Drivers/BSP/LED -I ../Drivers/BSP/BT -I ../Drivers/BSP/OLED -I ../Middlewares/Game-ID:/Users/YEWAN/AppData/Local/Arm/Packs/Keil/STM32G0xx_DFP/1.4.0/Drivers/CMSIS/Device/ST/STM32G0xx/Include-D__UVISION_VERSION="538" -DSTM32G030xx -DUSE_HAL_DRIVER-o ./objects/bt.o -MD)
+I (..\Drivers\BSP\BT\bt.h)(0x63DC246C)
 I (..\Drivers\System\sys\sys.h)(0x63D54B6E)
 I (..\Drivers\CMSIS\stm32g0xx.h)(0x60D1698C)
 I (..\Drivers\CMSIS\stm32g030xx.h)(0x60D1698C)
@@ -1435,14 +1435,14 @@ I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_uart_ex.h)(0x60D16A60)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_usart.h)(0x60D16A6A)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_usart_ex.h)(0x60D16A6A)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_wwdg.h)(0x60D16A7A)
-I (..\Drivers\BSP\BT\bt_dp.h)(0x63DBB80E)
+I (..\Drivers\BSP\BT\bt_dp.h)(0x63DC246C)
 I (D:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x637AECBC)
 I (D:\Keil_v5\ARM\ARMCLANG\include\string.h)(0x637AECBC)
 I (..\Drivers\System\usart\usart.h)(0x63D5294F)
 I (..\Drivers\BSP\BT\bt_event.h)(0x63DBB864)
 F (..\Drivers\BSP\BT\bt_dp.c)(0x63DA6831)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Drivers/CMSIS -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/System/sys -I ../Drivers/System/delay -I ../Drivers/System/usart -I ../User -I ../Drivers/BSP/LED -I ../Drivers/BSP/BT -I ../Drivers/BSP/OLED -I ../Middlewares/Game-ID:/Users/YEWAN/AppData/Local/Arm/Packs/Keil/STM32G0xx_DFP/1.4.0/Drivers/CMSIS/Device/ST/STM32G0xx/Include-D__UVISION_VERSION="538" -DSTM32G030xx -DUSE_HAL_DRIVER-o ./objects/bt_dp.o -MD)
-I (..\Drivers\BSP\BT\bt_dp.h)(0x63DBB80E)
-I (..\Drivers\BSP\BT\bt.h)(0x63DBB80E)
+I (..\Drivers\BSP\BT\bt_dp.h)(0x63DC246C)
+I (..\Drivers\BSP\BT\bt.h)(0x63DC246C)
 I (..\Drivers\System\sys\sys.h)(0x63D54B6E)
 I (..\Drivers\CMSIS\stm32g0xx.h)(0x60D1698C)
 I (..\Drivers\CMSIS\stm32g030xx.h)(0x60D1698C)
@@ -1514,7 +1514,7 @@ I (..\Drivers\System\usart\usart.h)(0x63D5294F)
 I (D:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x637AECBC)
 F (..\Drivers\BSP\BT\bt_event.c)(0x63DBBF33)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Drivers/CMSIS -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/System/sys -I ../Drivers/System/delay -I ../Drivers/System/usart -I ../User -I ../Drivers/BSP/LED -I ../Drivers/BSP/BT -I ../Drivers/BSP/OLED -I ../Middlewares/Game-ID:/Users/YEWAN/AppData/Local/Arm/Packs/Keil/STM32G0xx_DFP/1.4.0/Drivers/CMSIS/Device/ST/STM32G0xx/Include-D__UVISION_VERSION="538" -DSTM32G030xx -DUSE_HAL_DRIVER-o ./objects/bt_event.o -MD)
 I (..\Drivers\BSP\BT\bt_event.h)(0x63DBB864)
-I (..\Drivers\BSP\BT\bt.h)(0x63DBB80E)
+I (..\Drivers\BSP\BT\bt.h)(0x63DC246C)
 I (..\Drivers\System\sys\sys.h)(0x63D54B6E)
 I (..\Drivers\CMSIS\stm32g0xx.h)(0x60D1698C)
 I (..\Drivers\CMSIS\stm32g030xx.h)(0x60D1698C)
@@ -1582,7 +1582,7 @@ I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_uart_ex.h)(0x60D16A60)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_usart.h)(0x60D16A6A)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_usart_ex.h)(0x60D16A6A)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_wwdg.h)(0x60D16A7A)
-I (..\Drivers\BSP\BT\bt_dp.h)(0x63DBB80E)
+I (..\Drivers\BSP\BT\bt_dp.h)(0x63DC246C)
 I (D:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x637AECBC)
 I (D:\Keil_v5\ARM\ARMCLANG\include\string.h)(0x637AECBC)
 I (..\Middlewares\Game\AircraftWar.h)(0x63DABFEB)
@@ -1812,7 +1812,7 @@ I (D:\Keil_v5\ARM\ARMCLANG\include\stdlib.h)(0x637AECBC)
 I (..\Middlewares\Game\AW_Bullet.h)(0x63DBBF33)
 I (..\Middlewares\Game\AW_Player.h)(0x63DBBF33)
 I (..\Middlewares\Game\AW_Bg.h)(0x63D6AC45)
-F (..\Middlewares\Game\AW_Bullet.c)(0x63DBBD0C)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Drivers/CMSIS -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/System/sys -I ../Drivers/System/delay -I ../Drivers/System/usart -I ../User -I ../Drivers/BSP/LED -I ../Drivers/BSP/BT -I ../Drivers/BSP/OLED -I ../Middlewares/Game-ID:/Users/YEWAN/AppData/Local/Arm/Packs/Keil/STM32G0xx_DFP/1.4.0/Drivers/CMSIS/Device/ST/STM32G0xx/Include-D__UVISION_VERSION="538" -DSTM32G030xx -DUSE_HAL_DRIVER-o ./objects/aw_bullet.o -MD)
+F (..\Middlewares\Game\AW_Bullet.c)(0x63DD161C)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Drivers/CMSIS -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/System/sys -I ../Drivers/System/delay -I ../Drivers/System/usart -I ../User -I ../Drivers/BSP/LED -I ../Drivers/BSP/BT -I ../Drivers/BSP/OLED -I ../Middlewares/Game-ID:/Users/YEWAN/AppData/Local/Arm/Packs/Keil/STM32G0xx_DFP/1.4.0/Drivers/CMSIS/Device/ST/STM32G0xx/Include-D__UVISION_VERSION="538" -DSTM32G030xx -DUSE_HAL_DRIVER-o ./objects/aw_bullet.o -MD)
 I (..\Middlewares\Game\AircraftWar.h)(0x63DABFEB)
 I (..\Middlewares\Game\AW_def.h)(0x63DBBAC7)
 I (D:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x637AECBC)

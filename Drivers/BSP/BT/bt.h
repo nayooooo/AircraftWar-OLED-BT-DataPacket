@@ -32,7 +32,7 @@ typedef enum{
 	BT_STATETABLE_TURNRIGHT,				// BT右转
 	BT_STATETABLE_SHOOT,					// BT发射子弹
 }BT_StateTable_Event_Enum_t;
-#define BT_STATETABLE_ENDER			BT_STATETABLE_SHOOT
+
 typedef struct BT_StateTable_Event_Arr{
 	uint8_t num;			// 本次解码的事件数目
 	// 本次解码的事件列表
