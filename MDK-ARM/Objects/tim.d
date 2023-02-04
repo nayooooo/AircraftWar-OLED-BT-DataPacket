@@ -61,4 +61,11 @@
   ..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_uart_ex.h \
   ..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_usart.h \
   ..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_usart_ex.h \
-  ..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_wwdg.h
+  ..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_wwdg.h \
+  ..\User\main.h ..\Drivers\System\delay\delay.h \
+  ..\Drivers\System\usart\usart.h \
+  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h \
+  ..\Drivers\BSP\LED\led.h ..\Drivers\BSP\BT\bt.h \
+  ..\Drivers\BSP\BT\bt_dp.h ..\Drivers\BSP\OLED\oled.h \
+  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdlib.h \
+  ..\Middlewares\Game\AircraftWar.h ..\Middlewares\Game\AW_def.h
