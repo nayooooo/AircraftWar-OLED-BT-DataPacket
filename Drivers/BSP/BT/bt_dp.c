@@ -42,7 +42,7 @@ void BT_Get_DataPacket_Rx(void)
 =========================================================*/
 
 /**
- * @fn BT_Err_Enum_t BT_DataPacket_Show_USART1(void)
+ * @fn BT_Err_Enum_t BT_DataPacket_Printf(void)
  * @brief 通过串口1打印蓝牙接收到的数据包
  * @details 接收到的数据包必须是正确的数据包
  *
@@ -51,7 +51,7 @@ void BT_Get_DataPacket_Rx(void)
  *			BT_ERROR	->	函数执行错误
  *
  */
-void BT_DataPacket_Show_USART1(void)
+void BT_DataPacket_Printf(void)
 {
 	int8_t temp = dpr[0].rawData.flag;
 	

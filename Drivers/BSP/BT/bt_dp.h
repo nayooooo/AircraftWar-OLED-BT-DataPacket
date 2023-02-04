@@ -46,6 +46,6 @@ extern BT_DataPacket_Rx_t dpr[1];
 
 void BT_Get_DataPacket_Rx(void);
 
-void BT_DataPacket_Show_USART1(void);
+void BT_DataPacket_Printf(void);
 
 #endif /* __BT_DP_H */

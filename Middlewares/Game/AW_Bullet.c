@@ -18,12 +18,12 @@ static AW_Bullet_Shot_Link AW_BS_Head = NULL;
 
 /**
  * @fn static AW_Err_Enum_t AW_Bullet_Shot_Add(
- * 	AW_Bullet_Shot_Link head,
+ * 	AW_Bullet_Shot_Link *head,
  * 	AW_Bullet_Shot_Node *node
  * )
  * @brief 向双向链表中添加一个子弹
  *
- * @param [head] 双向链表头指针
+ * @param [head] 双向链表头指针的指针
  * @param [node] 待加入结点的指针
  * @return [AW_Err_Enum_t] 函数执行结果
  *			AW_OK		->	函数执行成功
@@ -31,31 +31,31 @@ static AW_Bullet_Shot_Link AW_BS_Head = NULL;
  *
  */
 static AW_Err_Enum_t AW_Bullet_Shot_Add(
-	AW_Bullet_Shot_Link head,
+	AW_Bullet_Shot_Link *head,
 	AW_Bullet_Shot_Node *node
 )
 {
-	if (head == NULL) {  // 容器中没有子弹指针
-		head = node;
+	if (*head == NULL) {  // 容器中没有子弹指针
+		*head = node;
 		node->prev = node;
 		node->next = node;
 	} else {  // 容器中有子弹指针
-		node->prev = head->prev;
-		node->next = head;
-		head->prev->next = node;
-		head->prev = node;
+		node->prev = (*head)->prev;
+		node->next = *head;
+		(*head)->prev->next = node;
+		(*head)->prev = node;
 	}
 	return AW_OK;
 }
 
 /**
  * @fn static AW_Err_Enum_t AW_Bullet_Shot_Remove(
- * 	AW_Bullet_Shot_Link head,
+ * 	AW_Bullet_Shot_Link *head,
  * 	AW_Bullet_Shot_Node *node
  * )
  * @brief 从双向链表中删除一个子弹
  *
- * @param [head] 双向链表头指针
+ * @param [head] 双向链表头指针的指针
  * @param [node] 待删除结点的指针
  * @return [AW_Err_Enum_t] 函数执行结果
  *			AW_OK		->	函数执行成功
@@ -63,7 +63,7 @@ static AW_Err_Enum_t AW_Bullet_Shot_Add(
  *
  */
 static AW_Err_Enum_t AW_Bullet_Shot_Remove(
-	AW_Bullet_Shot_Link head,
+	AW_Bullet_Shot_Link *head,
 	AW_Bullet_Shot_Node *node
 )
 {
@@ -73,11 +73,11 @@ static AW_Err_Enum_t AW_Bullet_Shot_Remove(
 	}
 	
 	// 双向链表头指针指向待删除结点，需要移动头指针
-	if (head == node) {
+	if (*head == node) {
 		/* 双向链表中只有一个结点 */
-		if (node->next == node) head = NULL;
+		if (node->next == node) *head = NULL;
 		/* 双向链表中不只一个结点 */
-		else head = node->next;
+		else *head = node->next;
 	}
 	
 	// 删除该结点
@@ -102,12 +102,19 @@ static AW_Err_Enum_t AW_Bullet_Shot_Remove(
  */
 AW_Err_Enum_t AW_Bullet_Move_CB(void)
 {
-	AW_Bullet_Shot_Link const head = AW_BS_Head;
-	AW_Bullet_Shot_Node * temp = head;
+	AW_Bullet_Shot_Link *head = &AW_BS_Head;
+	AW_Bullet_Shot_Node *temp = *head;
+	AW_Bullet_Shot_Node *temp_next = NULL;
 	
-	if(head == NULL) return AW_ERROR;
+	if(*head == NULL) return AW_ERROR;
 	
 	do {
+		// 防止出现野指针
+		if (temp->next != NULL) temp_next = temp->next;
+		else {  // 环形链表出现BUG！退出！
+			printf("AW_Bullet two-way list has bug!\r\n");
+			return AW_ERROR;
+		}
 		temp->p.x += temp->movementSpeed;
 		if (temp->p.x * AW_SS.pixelSize + temp->mapWidth > AW_SS.width) {  // 右溢出
 			temp->p.x = (AW_SS.width - temp->mapWidth) / AW_SS.pixelSize;
@@ -115,8 +122,8 @@ AW_Err_Enum_t AW_Bullet_Move_CB(void)
 				temp->isLaunch = 0;
 			}
 		}
-		temp = temp->next;
-	} while (temp != head);
+		temp = temp_next;
+	} while (temp != *head);
 	
 	return AW_OK;
 }
@@ -135,16 +142,16 @@ AW_Err_Enum_t AW_Bullet_Move_CB(void)
  */
 AW_Err_Enum_t AW_Bullet_Update(void)
 {
-	AW_Bullet_Shot_Link const head = AW_BS_Head;
-	AW_Bullet_Shot_Node *temp = head;
+	AW_Bullet_Shot_Link *head = &AW_BS_Head;
+	AW_Bullet_Shot_Node *temp = *head;
 	
-	if(head == NULL) return AW_ERROR;
+	if(*head == NULL) return AW_ERROR;
 	
 	do {
 		OLED_ShowBMP(temp->p.x * AW_SS.pixelSize, temp->p.y * AW_SS.pixelSize,
 						temp->map, temp->mapWidth, temp->mapHeight, FILL);
 		temp = temp->next;
-	} while (temp != head);
+	} while (temp != *head);
 	
 	return AW_OK;
 }
@@ -167,7 +174,7 @@ AW_Err_Enum_t AW_Bullet_Shoot(AW_Bullet_t *bullet, AW_Point p)
 	}
 	
 	memcpy(&(bullet->p), &p, sizeof(AW_Point));
-	if (AW_OK == AW_Bullet_Shot_Add(AW_BS_Head, bullet))
+	if (AW_OK == AW_Bullet_Shot_Add(&AW_BS_Head, bullet))
 		bullet->isLaunch = 1;
 	else return AW_ERROR;
 	

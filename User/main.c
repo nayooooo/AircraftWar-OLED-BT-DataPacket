@@ -29,7 +29,7 @@ int main()
 	{
 		if (USART2_RX_STA&USART2_RX_STA_REC_END) {  // 接收到了一包数据
 			BT_Get_DataPacket_Rx();  // 读取接收到的这包数据
-			BT_DataPacket_Show_USART1();
+			BT_DataPacket_Printf();
 			BT_DataPacket_Rx_Handle();
 			AW_Bullet_Move_CB();
 			AW_Screen_Refresh();
