@@ -5,6 +5,8 @@
 #include "delay.h"
 #include "usart.h"
 
+#include "tim.h"
+
 #include "led.h"
 #include "bt.h"
 #include "oled.h"

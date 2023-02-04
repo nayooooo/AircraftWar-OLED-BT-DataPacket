@@ -84,8 +84,12 @@ void AW_Game_Init(void)
  */
 void AW_Screen_Refresh(void)
 {
+	// 背景
 	AW_Screen_Show_BG(AW_SS.bg);
+	// 敌人
+	// 玩家角色
 	AW_Player_Update();
+	// 子弹
 	AW_Bullet_Update();
 	
 	OLED_Refresh_Gram();
