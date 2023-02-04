@@ -32,7 +32,7 @@ void HAL_TIM_Base_MspInit(TIM_HandleTypeDef* tim_baseHandle)
 	if(tim_baseHandle->Instance==TIM14)
 	{
 		__HAL_RCC_TIM14_CLK_ENABLE();
-		HAL_NVIC_SetPriority(TIM14_IRQn,2,3);		//设置中断优先级，抢占优先级2，子优先级3
+		HAL_NVIC_SetPriority(TIM14_IRQn,3,3);		//设置中断优先级，抢占优先级3，子优先级3
 		HAL_NVIC_EnableIRQ(TIM14_IRQn);				//开启TIM14中断
 	}
 }
