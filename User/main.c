@@ -24,11 +24,11 @@ int main()
 	delay_Init(MAIN_Fosc_M);
 	uart_init(115200UL);
 	
-	TIM14_Init(9, 1599);		// 16000000 / (1599 + 1) / (9 + 1) = 1000(Hz)
-	
 	LED_Init();
 	BT_Init();
 	AW_Game_Init();
+	
+	TIM14_Init(9, 1599);		// 16000000 / (1599 + 1) / (9 + 1) = 1000(Hz)
 	
 	while(1)
 	{

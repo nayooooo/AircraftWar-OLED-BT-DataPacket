@@ -24,7 +24,7 @@ void TIM14_Init(uint16_t arr,uint16_t psc)
 		Error_Handler();
 	}
 	
-//	HAL_TIM_Base_Start_IT(&htim14); //使能定时器14更新中断：TIM_IT_UPDATE
+	HAL_TIM_Base_Start_IT(&htim14); //使能定时器14更新中断：TIM_IT_UPDATE
 }
 
 void HAL_TIM_Base_MspInit(TIM_HandleTypeDef* tim_baseHandle)
