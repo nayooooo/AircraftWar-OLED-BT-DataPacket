@@ -1,8 +1,5 @@
 #include "tim.h"
 
-extern uint8_t Refresh_Task0;
-extern uint8_t Move_Bullet_Task1;
-
 uint32_t Global_Timer_Tick_Ms = 0;
 
 TIM_HandleTypeDef htim14;
@@ -13,7 +10,7 @@ TIM_HandleTypeDef htim14;
 //psc：时钟预分频数
 //定时器溢出时间计算方法:Tout=((arr+1)*(psc+1))/Ft us.
 //Ft=定时器工作频率,单位:Mhz
-//这里使用的是定时器3!
+//这里使用的是定时器14!
 void TIM14_Init(uint16_t arr,uint16_t psc)
 {
 	htim14.Instance = TIM14;							//通用定时器14
@@ -27,7 +24,7 @@ void TIM14_Init(uint16_t arr,uint16_t psc)
 		Error_Handler();
 	}
 	
-	HAL_TIM_Base_Start_IT(&htim14); //使能定时器14更新中断：TIM_IT_UPDATE
+//	HAL_TIM_Base_Start_IT(&htim14); //使能定时器14更新中断：TIM_IT_UPDATE
 }
 
 void HAL_TIM_Base_MspInit(TIM_HandleTypeDef* tim_baseHandle)
@@ -55,18 +52,20 @@ void TIM14_IRQHandler(void)
 }
 
 //回调函数，定时器中断服务函数调用
+#include "main.h"
+extern main_Task_Flag_t main_Task_Flag;
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
     if(htim==(&htim14))
     {
         Global_Timer_Tick_Ms++;
-		if ((Refresh_Task0 == 0) && (Global_Timer_Tick_Ms != 0)
+		if ((main_Task_Flag.refresh == 0) && (Global_Timer_Tick_Ms != 0)
 			&& (Global_Timer_Tick_Ms % 33 == 0)) {  // 30Hz
-			Refresh_Task0 = 1;
+			main_Task_Flag.refresh = 1;
 		}
-		if ((Move_Bullet_Task1 == 0) && (Global_Timer_Tick_Ms != 0)
+		if ((main_Task_Flag.moveBullet == 0) && (Global_Timer_Tick_Ms != 0)
 			&& (Global_Timer_Tick_Ms % 500 == 0)) {  // 2Hz
-			Move_Bullet_Task1 = 1;
+			main_Task_Flag.moveBullet = 1;
 		}
     }
 }

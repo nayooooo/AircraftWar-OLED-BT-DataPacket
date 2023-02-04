@@ -328,8 +328,8 @@ void HAL_UART_MspInit(UART_HandleTypeDef *huart)
 		HAL_GPIO_Init(GPIOB,&GPIO_Initure);	   	//初始化PB7
 		
 #if EN_USART1_RX
-		HAL_NVIC_EnableIRQ(USART1_IRQn);				//使能USART1中断通道
 		HAL_NVIC_SetPriority(USART1_IRQn,3,3);			//抢占优先级3，子优先级3
+		HAL_NVIC_EnableIRQ(USART1_IRQn);				//使能USART1中断通道
 #endif	
 	}
 	if(huart->Instance==USART2)//如果是串口2，进行串口2 MSP初始化
@@ -348,8 +348,8 @@ void HAL_UART_MspInit(UART_HandleTypeDef *huart)
 		HAL_GPIO_Init(GPIOA,&GPIO_Initure);	   	//初始化PA3
 		
 #if EN_USART2_RX
+		HAL_NVIC_SetPriority(USART2_IRQn,3,3);			//抢占优先级3，子优先级3
 		HAL_NVIC_EnableIRQ(USART2_IRQn);				//使能USART2中断通道
-		HAL_NVIC_SetPriority(USART1_IRQn,3,3);			//抢占优先级3，子优先级3
 #endif	
 	}
 }

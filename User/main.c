@@ -9,12 +9,12 @@
 
 #include "main.h"
 
-extern uint32_t Global_Timer_Tick_Ms;
-
 extern AW_Err_Enum_t AW_Bullet_Move_CB(void);
 
-uint8_t Refresh_Task0 = 0;
-uint8_t Move_Bullet_Task1 = 0;
+main_Task_Flag_t main_Task_Flag = {
+	.refresh = 0,
+	.moveBullet = 0,
+};
 
 int main()
 {
@@ -33,14 +33,14 @@ int main()
 	while(1)
 	{
 		// 刷新显示载体任务
-		if (Refresh_Task0 == 1) {  // 30Hz
-			Refresh_Task0 = 0;
+		if (main_Task_Flag.refresh == 1) {  // 30Hz
+			main_Task_Flag.refresh = 0;
 			AW_Screen_Refresh();
 		}
 		
 		// 移动子弹任务
-		if (Move_Bullet_Task1 == 1) {  // 2Hz
-			Move_Bullet_Task1 = 0;
+		if (main_Task_Flag.moveBullet == 1) {  // 2Hz
+			main_Task_Flag.moveBullet = 0;
 			LED_Toggle();
 			AW_Bullet_Move_CB();
 		}
@@ -50,6 +50,7 @@ int main()
 			BT_Get_DataPacket_Rx();  // 读取接收到的这包数据
 			BT_DataPacket_Printf();
 			BT_DataPacket_Rx_Handle();
+			AW_Bullet_Move_CB();
 			AW_Screen_Refresh();
 		}
 	}

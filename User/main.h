@@ -13,4 +13,9 @@
 
 #include "AircraftWar.h"
 
+typedef struct{
+	uint8_t refresh: 1;
+	uint8_t moveBullet: 1;
+}main_Task_Flag_t;
+
 #endif /* __MAIN_H */
