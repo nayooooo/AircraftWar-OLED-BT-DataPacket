@@ -39,9 +39,8 @@ int main()
 		}
 		
 		// 移动子弹任务
-		if (main_Task_Flag.moveBullet == 1) {  // 2Hz
+		if (main_Task_Flag.moveBullet == 1) {  // 5Hz
 			main_Task_Flag.moveBullet = 0;
-			LED_Toggle();
 			AW_Bullet_Move_CB();
 		}
 		
@@ -50,8 +49,6 @@ int main()
 			BT_Get_DataPacket_Rx();  // 读取接收到的这包数据
 			BT_DataPacket_Printf();
 			BT_DataPacket_Rx_Handle();
-			AW_Bullet_Move_CB();
-			AW_Screen_Refresh();
 		}
 	}
 }

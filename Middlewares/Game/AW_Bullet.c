@@ -187,7 +187,7 @@ AW_Err_Enum_t AW_Bullet_Init(AW_Bullet_t *bullet)
 	bullet->next = NULL;
 	bullet->isLaunch = 0;
 	bullet->shootDir = AW_BULLET_PLAYER_SHOOT_DIR;
-	bullet->movementSpeed = 10;
+	bullet->movementSpeed = 5;
 	bullet->p.x = 0;
 	bullet->p.y = 0;
 	bullet->map = bullet_Map1;

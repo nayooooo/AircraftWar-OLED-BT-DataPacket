@@ -64,7 +64,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 			main_Task_Flag.refresh = 1;
 		}
 		if ((main_Task_Flag.moveBullet == 0) && (Global_Timer_Tick_Ms != 0)
-			&& (Global_Timer_Tick_Ms % 500 == 0)) {  // 2Hz
+			&& (Global_Timer_Tick_Ms % 200 == 0)) {  // 5Hz
 			main_Task_Flag.moveBullet = 1;
 		}
     }
