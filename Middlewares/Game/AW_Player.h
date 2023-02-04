@@ -9,7 +9,7 @@
 	游戏成员参数宏
 ================================================================*/
 
-#define AW_PLAYER_BULLETS_NUM_MAX				(5)
+#define AW_PLAYER_BULLETS_NUM_MAX				(10)
 #define AW_PLAYER_PX_DEFAULT					(0)
 #define AW_PLAYER_PY_DEFAULT					(AW_SS.height / AW_SS.pixelSize / 2)
 #define AW_PLAYER_BLOODVOL_DEFAULT				(3)

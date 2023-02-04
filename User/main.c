@@ -33,21 +33,24 @@ int main()
 	while(1)
 	{
 		// 刷新显示载体任务
-		if (main_Task_Flag.refresh == 1) {  // 30Hz
+		if (main_Task_Flag.refresh)
+		{  // 30Hz
 			main_Task_Flag.refresh = 0;
 			AW_Screen_Refresh();
 		}
 		
 		// 移动子弹任务
-		if (main_Task_Flag.moveBullet == 1) {  // 5Hz
+		if (main_Task_Flag.moveBullet)
+		{  // 5Hz
 			main_Task_Flag.moveBullet = 0;
 			AW_Bullet_Move_CB();
 		}
 		
 		// 收取数据包任务
-		if (USART2_RX_STA&USART2_RX_STA_REC_END) {  // 接收到了一包数据
+		if (USART2_RX_STA&USART2_RX_STA_REC_END)
+		{  // 接收到了一包数据
 			BT_Get_DataPacket_Rx();  // 读取接收到的这包数据
-			BT_DataPacket_Printf();
+//			BT_DataPacket_Printf();
 			BT_DataPacket_Rx_Handle();
 		}
 	}
